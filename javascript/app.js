@@ -1,6 +1,5 @@
-const list = ['angular', 'magic', 'brew', 'while', 'throw', 'css', 'break', 'swing', 'echo', 'let', 'wall', 'laughter', 'hash', 'spinner', 'beer', 'ninja', 'javascript', 'master', 'program', 'coding', 'hero', 'learning', 'work', 'case', 'react', 'dragon', 'rush', 'api', 'init', 'motion', 'google', 'float', 'damn', 'block', 'ranking', 'nice', 'machine', 'perfect', 'deploy', 'terminal', 'array', 'vue', 'node', 'html', 'front', 'grid', 'stack', 'mac', 'console', 'ajax', 'heroku', 'loop', 'sql', 'php', 'data', 'npm', 'server', 'bash']
 const RANDOM_QUOTE_API_URL = 'http://api.quotable.io/random'
-const $ = (selector) => document.getElementById(selector)
+const $ = id => document.getElementById(id)
 const display = $('display')
 const input = $('input')
 const timer = $('timer')
@@ -47,8 +46,6 @@ function randomQuote() {
 }
 
 async function render() {
-    // const random = getRandomIntInclusive()
-    // const wordArray = list[random].split('')
     const quote = await randomQuote()
     display.innerHTML = ''
     quote.split('').forEach(character => {
@@ -76,5 +73,5 @@ function time() {
 function getRandomIntInclusive() {
     const min = Math.ceil(0);
     const max = Math.floor(list.length);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
